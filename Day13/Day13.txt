@@ -1,0 +1,407 @@
+//Q1) print hello world in C programming language
+
+//vi example1.c
+// c file name is example1 
+
+
+//code:
+
+#include<stdio.h>
+int main()
+{
+
+printf("Hello World\n");
+
+
+return 0;
+}
+
+//output: Hello World
+
+
+//gcc example1.c -o example1
+//explanation: 
+This compiles the C file example1.c using the GCC compiler.
+The -o example1 part names the output file example1.
+You can run the program with ./example1.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Q2) Variables
+
+//code:
+
+#include<stdio.h>
+int main()
+{
+
+int age=25;
+printf("%d",age);
+return 0;
+}
+
+
+//output: 25
+
+
+//Explanation:
+
+Format specifiers are used in printf and scanf to display or take input of different data types:
+
+%d / %i – Integer
+
+%f / %F – Float
+
+%lf – Double
+
+%c – Character
+
+%s – String
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Q3) 
+
+//code:
+
+#include<stdio.h>
+int main()
+{
+ int age=25;
+printf("%d\n",age);
+
+age=31;
+printf("%d\n",age);
+
+return 0;
+}
+
+
+//output:  25
+           31
+
+//EXplanation:
+
+An integer variable age is first set to 25 and printed.
+Then age is updated to 31 and printed again.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//Q4)
+
+//code:
+
+#include<stdio.h>
+int main()
+{
+int firstnum=25;
+printf("%d\n",firstnum);
+int secondnum=firstnum;
+printf("%d\n",secondnum);
+return 0;
+}
+
+
+//output:  25
+           25
+		   
+//Explanation:
+
+firstnum is assigned 25 and printed.
+secondnum copies the value of firstnum and is printed.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q5)declare multiple variables in single line
+
+// code:
+
+#include<stdio.h>
+int main()
+{
+  int firstnum,secondnum=11;
+  printf("%d\n",firstnum);
+  printf("%d\n",secondnum);
+return 0;
+
+}
+
+//output:
+
+(random garbage value)
+11
+
+
+//Explanation:
+
+firstnum is declared but not initialized, so it contains a garbage (undefined) value.
+
+secondnum is initialized to 11 and printed.
+
+//correct Code:
+
+#include<stdio.h>
+int main()
+{
+  int firstnum=16,secondnum=11;
+  printf("%d\n",firstnum);
+  printf("%d\n",secondnum);
+return 0;
+
+}
+
+//output: 16
+          11
+		  
+//Explanation:
+
+firstnum is initialized to 16 and printed.
+secondnum is initialized to 11 and printed.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q6)Printing a Double Variable in C
+
+//code:
+
+#include<stdio.h>
+int main()
+{
+double dnum=12.45;
+printf("%lf",dnum);
+
+return 0;
+}            
+
+//output: 12.450000
+
+//Explanation:
+
+A double variable dnum is assigned the value 12.45
+
+%lf is used in printf to print the double value.
+
+When using %lf in printf, the double value is printed with 6 digits after the decimal point by default. That’s why 12.45 appears as 12.450000.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q7) Printing Float Values in C
+
+#include<stdio.h>
+int main()
+{
+  float num=10.9f;
+printf("%f\n",num);
+printf(".1%f",num);
+
+ return 0;
+}
+  
+ 
+//output:
+10.900000
+10.9
+
+//Explanation:
+
+The first printf prints the float num with 6 decimal places (10.900000) followed by a newline.
+
+The second printf prints .1 literally, then prints num again with 6 decimal places (10.900000), so the output is 10.9
+
+To print num with 1 decimal place, use %.1f (e.g., printf("%.1f", num);).
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q8) Printing a Character Using %e and %d Format Specifiers in C
+  
+//code:
+
+#include<stdio.h>
+  int main()
+  {
+     char letter='z';
+	 printf("%e",letter);
+	 printf("\n%d",letter);
+
+	 return 0;
+  
+  }
+  
+//output:
+112
+
+//Explanation:
+
+%e is used for floating-point numbers in scientific notation. Printing a char with %e leads to unexpected output (0.000000e+00).
+
+%d correctly prints the ASCII value of the character 'z', which is 112.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q9) Taking Integer Input and Displaying It in C
+
+//Code:
+
+#include <stdio.h>
+int main() {
+    int age;
+    printf("Age: ");
+    scanf("%d", &age);
+    printf("Age: %d\n", age);
+    return 0;
+}
+
+
+//output:
+Age: 25
+Age: 25
+
+
+//Explanation:
+
+The program asks the user to enter their age.
+
+scanf("%d", &age); reads an integer input from the user and stores it in age.
+
+Then it prints the entered age using printf.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q10) Taking Double Input and Displaying It in C
+
+//code:
+
+#include <stdio.h>
+int main() {
+    double num;
+    printf("number: ");
+    scanf("%lf", &num);
+    printf("number: %lf\n", num);
+    return 0;
+}
+
+//output:
+number: 12.345
+number: 12.345000
+
+
+
+//Explanation:
+
+The program prompts the user to enter a double (floating-point) number.
+
+scanf("%lf", &num); reads the input and stores it in num.
+
+It then prints the entered number using printf with %lf.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q11) Reading Double and Character Inputs in C
+
+//code:
+
+#include <stdio.h>
+int main() {
+    double number;
+    char alpha;
+    printf("Enter inputs: ");
+    scanf("%lf %c", &number, &alpha);
+    printf("number: %lf\n", number);
+    printf("alpha: %c\n", alpha);
+    return 0;
+}
+
+
+//output:
+
+Enter inputs: 23.10 p
+number: 112
+alpha: p
+
+//Explanation:
+
+The program reads a double (number) and a character (alpha) from the user.
+
+%lf reads the double, %c reads the character.
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Q12)Simple Calculator Using Arithmetic Operators in C
+
+//code:
+
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    printf("Enter inputs: ");
+    scanf("%d %d", &num1, &num2);
+
+    int sum = num1 + num2;
+    int sub = num1 - num2;
+    int mult = num1 * num2;
+    float div = (float)num1 / num2; 
+    int remainder = num1 % num2;
+
+    printf("Sum: %d\n", sum);
+    printf("Sub: %d\n", sub);
+    printf("Mult: %d\n", mult);
+    printf("Div: %.2f\n", div); 
+    printf("Remainder: %d\n", remainder);
+
+    return 0;
+}
+
+//output:
+Enter inputs: 10 2
+Sum: 12
+Sub: 8
+Mult: 20
+Div: 5.00000
+Remainder: 0
+
+//Explanation:
+
+The program takes two integers as input.
+
+It calculates the sum, difference, product, integer remainder, and division.
+
+For division, one integer is cast to float to get an accurate decimal result instead of integer division.
+
+The division result is printed with 2 decimal places using %.2f.
+
+
+
+
+
+
+
+
+
+
+
