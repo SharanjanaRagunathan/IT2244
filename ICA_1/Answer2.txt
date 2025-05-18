@@ -1,0 +1,45 @@
+✅ Question 02 – Bash Shell Commands (save as answer2.sh)
+Assuming data.csv is in the same directory and has a header (e.g., Name,GPA):
+# Filter GPA > 3.5
+awk -F, 'NR>1 && $4 > 3.5' data.csv
+
+//output
+Priya   21    Environmentscience  3.7
+Carol   23    Physicalscience     3.99
+David   21    IT                  3.98
+Riya    22    Physicalscience     3.6
+Rahman  21    Environmentscience  3.7
+Anna    23    Physicalscience     3.78
+Riyas   21    IT                  3.76
+
+
+
+
+# Calculate average GPA
+awk -F, 'NR>1 {sum+=$4; count++}
+{if (count > 0) print "Average GPA:", sum/count}' data.csv 
+
+
+//output
+Average GPA: 3.511
+
+
+
+
+//sample data
+Name	Age	Department	GPA
+John	22	Physicalscience	3.5
+Priya	21	Environmentscience	3.7
+Meera	22	IT	3.1
+Carol	23	Physicalscience	3.99
+David	21	IT	3.98
+Riya	22	Physicalscience	3.6
+Rahman	21	Environmentscience	3.7
+Rose	22	IT	2
+Anna	23	Physicalscience	3.78
+Riyas	21	IT	3.76
+
+//conclusion
+This Bash script demonstrates how to use `awk` for filtering and analyzing structured data in a CSV file. It effectively extracts rows based on conditions (GPA > 3.5) and computes the average GPA, showcasing the power of shell scripting for data processing and automation in Linux environments.
+
+
