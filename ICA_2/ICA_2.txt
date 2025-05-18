@@ -1,0 +1,45 @@
+echo "Enter three numbers:"
+read a b c
+
+if [ "$a" -gt "$b" ]; then
+  max=$a
+else
+  max=$b
+fi
+
+lcm=$max
+while true
+do
+  rem1=$((lcm % a))
+  rem2=$((lcm % b))
+
+  if [ "$rem1" -eq 0 ] && [ "$rem2" -eq 0 ]; then
+    break
+  fi
+
+  lcm=$((lcm + 1))
+done
+
+
+if [ "$b" -lt "$c" ]; then
+  min=$b
+else
+  min=$c
+fi
+
+gcd=$min
+while true
+do
+  rem3=$((b % gcd))
+  rem4=$((c % gcd))
+
+  if [ "$rem3" -eq 0 ] && [ "$rem4" -eq 0 ]; then
+    break
+  fi
+
+  gcd=$((gcd - 1))
+done
+
+
+echo "LCM of $a and $b is: $lcm"
+echo "GCD of $b and $c is: $gcd"
