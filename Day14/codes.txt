@@ -1,0 +1,448 @@
+########  if else
+
+if(condition){
+//body of if statment;
+}
+else{
+//body of else statment;
+}
+
+Example":Enter your age verify your aligible or not 
+for election voting using if else condtion...
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int age;
+
+    // Ask the user to enter their age
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    // Check eligibility
+    if (age >= 18) {
+        printf("You are eligible for election voting.\n");
+    } else {
+        printf("You are not eligible for election voting.\n");
+    }
+
+    return 0;
+}
+#### Ternary operator
+test_condition ? expression1 : expression2;
+
+#include<stdio.h>
+int main(){
+	int age;
+	
+	printf("Enter your age: ");
+	sacnf("%d", &age);
+	
+	(age >= 18) ? printf("You are eligible") : printf("You are not eligible\n");
+	
+	return 0;
+}
+
+
+-----------------------------
+#######switch operator
+switch(variable/expression){
+	case 1:
+	//body of case 1
+	break;
+	
+	case 2:
+	//body of case 2
+	break;
+	
+	case n:
+	//body of case n
+	break;
+	
+	default:
+	//body of default
+}
+
+
+example 1: Enter the value between 1 to 7 and create a program for following output:
+
+Enter ythe number between 1 to 7:1
+Today is Sunday!
+
+CODE:
+#include<stdio.h>
+int main(){
+	
+    int day;
+
+    // Ask the user to enter a number
+    printf("Enter the number between 1 to 7: ");
+    scanf("%d", &day);
+
+    // Determine the day using a switch statement
+    switch (day) {
+        case 1:
+            printf("Today is Sunday!\n");
+            break;
+        case 2:
+            printf("Today is Monday!\n");
+            break;
+        case 3:
+            printf("Today is Tuesday!\n");
+            break;
+        case 4:
+            printf("Today is Wednesday!\n");
+            break;
+        case 5:
+            printf("Today is Thursday!\n");
+            break;
+        case 6:
+            printf("Today is Friday!\n");
+            break;
+        case 7:
+            printf("Today is Saturday!\n");
+            break;
+        default:
+            printf("Invalid input! Please enter a number between 1 and 7.\n");
+    }
+
+	return 0;
+}
+
+-----------------------------------
+
+Example 2:
+Enter a code for small astrology based on your life path number for that get date of birth.
+ from user then calculate life path Number(use switch case)
+
+Date:23
+calculate for life path number:
+a=date%10     3
+b=date/10     2
+c=a+b         5
+
+if life path number:
+1:Lucky
+2:Careful do your work
+3:Stronger
+4:Happy
+5:Can get help
+6:Doubt
+7:Sad
+8:Like
+9:Courage
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int date, a, b, lifePath;
+
+    // Ask the user to enter their birth date
+    printf("Enter your birth date (day of the month): ");
+    scanf("%d", &date);
+
+    // Calculate life path number
+    a = date % 10;  // Extract last digit
+    b = date / 10;  // Extract first digit
+    lifePath = a + b; // Sum the digits
+
+    // Output astrology reading using switch case
+    switch (lifePath) {
+        case 1:
+            printf("Your life path number is %d: Lucky!\n", lifePath);
+            break;
+        case 2:
+            printf("Your life path number is %d: Careful, do your work!\n", lifePath);
+            break;
+        case 3:
+            printf("Your life path number is %d: Stronger!\n", lifePath);
+            break;
+        case 4:
+            printf("Your life path number is %d: Happy!\n", lifePath);
+            break;
+        case 5:
+            printf("Your life path number is %d: Can get help!\n", lifePath);
+            break;
+        case 6:
+            printf("Your life path number is %d: Doubt!\n", lifePath);
+            break;
+        case 7:
+            printf("Your life path number is %d: Sad!\n", lifePath);
+            break;
+        case 8:
+            printf("Your life path number is %d: Like!\n", lifePath);
+            break;
+        case 9:
+            printf("Your life path number is %d: Courage!\n", lifePath);
+            break;
+        default:
+            printf("Your life path number is %d, but it's out of range for an astrology reading.\n", lifePath);
+    }
+
+    return 0;
+}
+
+----------------------------------------
+Exaple 3:
+Give list of number then calculate the summation and multiplication  using for loop
+1 2 3 4 5
+summation =15
+multiplication =120
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int numbers[] = {1, 2, 3, 4, 5}; // List of numbers
+    int sum = 0, product = 1; // Initialize sum and product
+    int length = sizeof(numbers) / sizeof(numbers[0]); // Find the number of elements
+
+    // Loop through the numbers
+    for (int i = 0; i < length; i++) {
+        sum += numbers[i];      // Add the current number to sum
+        product *= numbers[i];  // Multiply the current number to product
+    }
+
+    // Print results
+    printf("Summation = %d\n", sum);
+    printf("Multiplication = %d\n", product);
+
+    return 0;
+}
+
+-------------------------------------
+Example 4:
+print the integer from 1 to 10 using while loop.
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int i = 1; // Initialize counter
+
+    // Use while loop to print numbers from 1 to 10
+    while (i <= 10) {
+        printf("%d\n", i);
+        i++; // Increment counter
+    }
+
+    return 0;
+}
+
+-----------------------------------------
+Example 5:
+write a c programe to generate and print the fibonacci series up to a specified number of terms. 
+The program should take the number of terms as input from the user and then display the corresponding Fibonacci sequence.
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int n, first = 0, second = 1, next;
+
+    // Ask the user to enter the number of terms
+    printf("Enter the number of terms for Fibonacci series: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series: ");
+
+    for (int i = 0; i < n; i++) {
+        if (i <= 1) {
+            next = i;  // The first two numbers are 0 and 1
+        } else {
+            next = first + second; // Calculate next term
+            first = second;  // Update first
+            second = next;   // Update second
+        }
+        printf("%d ", next);
+    }
+
+    printf("\n");
+    return 0;
+}
+
+--------------------------------------
+Example 6:
+Write a c program to calculate the factorial of give non-negative integer.
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int num;
+    unsigned long long factorial = 1; // Using unsigned long long to handle large factorial values
+
+    // Ask the user to enter a non-negative integer
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &num);
+
+    // Check if the input is valid
+    if (num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        // Calculate factorial using a loop
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        printf("Factorial of %d is %llu\n", num, factorial);
+    }
+
+    return 0;
+}
+
+----------------------------------
+Example 7:
+Write a c program that:
+Accepts two strings as input from the user.
+concatenates the two srings dispaly the concatenated results.
+
+CODE:
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100], result[200];
+
+    
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+    
+    strcpy(result, str1);  
+    strcat(result, str2);  
+
+    
+    printf("Concatenated string: %s\n", result);
+
+    return 0;
+}
+
+------------------------------
+Example 8: 
+write a c program that takes a binary number(as an integer)as input and
+converts it to its decimal equivalent.
+
+CODE:
+#include <stdio.h>
+
+int binaryToDecimal(int binary) {
+    int decimal = 0, base = 1, remainder;
+    
+    while (binary > 0) {
+        remainder = binary % 10;
+        decimal += remainder * base;
+        base *= 2;
+        binary /= 10;
+    }
+
+    return decimal;
+}
+
+int main() {
+    int binary;
+
+    // Getting input from user
+    printf("Enter a binary number: ");
+    scanf("%d", &binary);
+
+    // Converting binary to decimal
+    int decimal = binaryToDecimal(binary);
+
+    // Displaying result
+    printf("Decimal equivalent: %d\n", decimal);
+
+    return 0;
+}
+
+--------------------------
+Example 9:
+Write a cprograme that:
+Accepts an array of integers from the userFinds and display the maximum and ,minimum  values in the array.
+CODE:
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    
+    // Getting the array size from the user
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Taking input for array elements
+    printf("Enter %d integers: ", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Initializing max and min to the first element
+    int max = arr[0], min = arr[0];
+
+    // Finding the maximum and minimum values
+    for(i = 1; i < n; i++) {
+        if(arr[i] > max) {
+            max = arr[i];
+        }
+        if(arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    // Displaying the results
+    printf("Maximum value: %d\n", max);
+    printf("Minimum value: %d\n", min);
+
+    return 0;
+}
+--------------------------------------------
+
+Example 10:
+c program to generate Pascal's Triangle.
+Output:
+no of rows=5
+            1
+		   1 1
+		 1  2  1
+	    1  3  3  1
+      1   4   6   4  1
+
+CODE:
+#include <stdio.h>
+
+int main() {
+    int rows, coef = 1, space, i, j;
+
+    // Define number of rows
+    rows = 5;
+
+    // Generate Pascal's Triangle
+    for(i = 0; i < rows; i++) {
+        // Print spaces for alignment
+        for(space = 1; space <= rows - i; space++) {
+            printf("  ");
+        }
+
+        // Print Pascal's Triangle values
+        for(j = 0; j <= i; j++) {
+            if (j == 0 || i == 0) {
+                coef = 1;
+            } else {
+                coef = coef * (i - j + 1) / j;
+            }
+            printf("%4d", coef);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
