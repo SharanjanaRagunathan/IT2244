@@ -1,0 +1,49 @@
+
+
+::Create New directories named CSC2244 , Marks and Exam on your Desktop.
+cd %USERPROFILE%\Desktop
+mkdir CSC2244
+mkdir Marks
+mkdir Exam
+
+
+::Inside the CSC2244 directory, create three subdirectories named practical, theory, and exampapers.
+cd CSC2244
+mkdir practical
+mkdir theory
+mkdir examPapers
+
+::Inside each subdirectories, create a text file, a Word document, and a PowerPoint document respectively
+cd practical
+echo. >practical.txt
+echo. >practical.docx
+echo. >practical.pptx
+cd..
+
+cd theory
+echo. >theory.txt
+echo. >theory.docx
+echo. >theory.pptx
+cd..
+
+
+cd examPapers
+echo. >examPapers.txt
+echo. >examPapers.docx
+echo. >examPapers.pptx
+cd..
+
+cd..
+::Create two new excel files in desktop named Icae Marks and Final Exam Marks and move that files into the directory Marks
+cd %USERPROFILE%\Desktop
+
+echo. >Icae_marks.xlsx
+echo. >Final_Exam_Marks.xlsx
+
+move "Icae Marks.xlsx" Marks
+move "Final Exam Marks.xlsx" Marks
+
+::Copy the Directory Marks into the Exam directory and hide the Exam directory
+xcopy  /E /I Marks Exam\Marks
+
+attrib +h Exam

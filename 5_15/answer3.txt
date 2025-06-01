@@ -1,0 +1,22 @@
+touch answer3.sh
+vi answer3.sh
+chmod 777 answer3.sh
+./answer3.sh
+
+::Read two Strings from user String 1 and String 2
+echo "Enter the String_1: "
+read String_1
+echo "Enter the String_2: "
+read String_2
+
+::Count the characters of each String and print the lengthy String as shown in the Expected output
+str1_ln=$(($String_1))
+str2_ln=$(($String_2))
+
+
+if(( $str1_ln -gt $str2_ln ))
+then
+   echo $String_1" is Greater than" $String_2
+else
+   echo $String_2" is Greater than" $String_1
+fi

@@ -1,0 +1,26 @@
+
+
+touch data.csv
+vi data.csv
+chmod 777 data.csv
+
+::Filter the rows where the GPA greater than 3.5
+awk -F, 'NR==1 || $4 > 3.5' data.csv
+
+::OUTPUT
+Name,Age,Department,GPA
+Priya,21,Environmentscience,3.7
+Carol,23,Physicalscience,3.99
+David,21,IT,3.98
+Riya,22,Physicalscience,3.6
+Rahman,21,Environmentscience,3.7
+Anna,23,Physicalscience,3.78
+Riyas,21,IT,3.76
+
+-----------------------------------------------------------------------------------------------------------
+
+::Calculate the average GPA of all Students.
+awk -F, 'NR>1 {sum+=$4; count++} END {if (count > 0) print "Average GPA: ", sum/count}' data.csv
+
+::OUTPUT
+Average GPA:  3.19182
